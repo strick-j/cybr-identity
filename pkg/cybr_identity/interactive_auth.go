@@ -7,14 +7,14 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/strick-j/cybr_identity/pkg/cybr_identity/types"
+	"cybr-identity/pkg/cybr_identity/types"
 )
 
 // StartAuthentication performs the initial step in an interactive authentication process:
 //
-//	 clientURL - URL for the CyberArk Identity tenant (e.g. "example.my.cyberark.cloud")
-//	 clientVersion - API Version - Default 1.0
-//		clientUsername - Username for interactive authentication (e.g. "identity-privilege-integration-user$@example.com")
+//		 clientURL - URL for the CyberArk Identity tenant (e.g. "example.my.cyberark.cloud")
+//		 clientVersion - API Version - Default 1.0
+//	  clientUsername - Username for interactive authentication (e.g. "identity-privilege-integration-user$@example.com")
 func StartAuthentication(clientUsername, clientVersion, clientURL string) (*types.AuthResponse, error) {
 	// Establish body for StartAuthentication API Call
 	startAuth := types.StartAuth{
